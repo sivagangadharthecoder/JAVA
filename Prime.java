@@ -1,27 +1,23 @@
 import java.util.*;
 
-public class Prime  
-{  
-public static void main(String[] args)  
- {  
-int c=0,n=0,i=1,j=1;  
-while(n<25)  
-{  
-j=1;  
-c=0;  
-while(j<=i)  
-{  
-if(i%j==0)  
-c++;  
-j++;  
-}  
-if(c==2)  
-{  
-System.out.printf("%d ",i);  
-n++;  
-}  
-i++;  
-}    
-}  
-}  
+public class Prime{
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
 
+        int i, j;
+        for (i = 2; i <= 100; i++) {
+            int count = 0; // Reset count for each number i
+
+            for (j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    count = 1;
+                    break;
+                }
+            }
+
+            if (count == 0) {
+                System.out.print(i + " "); // Print prime number inside the outer loop
+            }
+        }
+    }
+}
